@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html >
+<title>SUIT-TV</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="./Img/icon.jpg" type="image/jpg" sizes="16x16">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./CSS/Main.css">
+<link href="https://fonts.googleapis.com/css?family=El+Messiri|Sarpanch|Baloo+Da|Text+Me+One|Luckiest+Guy|Russo+One|Paytone+One|Lemonada&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+<!-- Sidebar/menu -->
+	<nav class="w3-sidebar w3-collapse w3-black w3-animate-right" style="z-index:3;width:200px;" id="mySidebar">
+	  <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding close" title="close menu">
+		  <i class="fa fa-remove"></i>
+	  </a>
+	  <div class="w3-container">
+		<h1 class="glow ">SUIT-TV</h1>
+	  </div>
+	  <div class="w3-bar-block">
+		 <a href="DashboardPage.html" onclick="w3_close()" class="w3-bar-item  w3-padding ">لوحة القيادة<i class=" fa  fa-home fa-fw w3-margin-right "></i></a> 
+    <a href="CategoriesPage.html" onclick="w3_close()" class="w3-bar-item  w3-padding">الأقسام<i class=" fa fa-sitemap fa-fw w3-margin-right w3-large"></i></a>
+	<a href="Series.html" onclick="w3_close()" class="w3-bar-item  w3-padding  navactive">المسلسلات<i class=" fa  fa-television fa-fw w3-margin-right w3-large"></i></a> 
+    <a href="Episodes of serials.html" onclick="w3_close()" class="w3-bar-item  w3-padding">حلقات المسلسلات<i class="fa fa-camera-retro fa-fw w3-margin-right w3-large"></i></a> 
+    <a href="Film.html" onclick="w3_close()" class="w3-bar-item  w3-padding">أفلام<i class="fa fa-film fa-fw w3-margin-right w3-large"></i></a> 
+    <a href="Slide.html" onclick="w3_close()" class="w3-bar-item  w3-padding">السليد الوجه<i class="fa fa-circle-o fa-fw w3-margin-right w3-large"></i></a> 
+    <a href="Users.html" onclick="w3_close()" class="w3-bar-item  w3-padding">مستخدمين<i class="fa fa-user fa-fw w3-margin-right w3-large"></i></a>
+	  </div>
+	 </nav>
+
+	<!-- Overlay effect when opening sidebar on small screens -->
+	<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+	<!-- !PAGE CONTENT! -->
+
+
+  <!-- Header -->
+  <header id="portfolio">
+	 <div id="UserNav" class="row">
+		<div class=" col-lg-6 col">
+			<a href="Profile.html" data-placement="bottom" data-toggle="tooltip" title="الصفحة الشخصية">
+				<img src="./Img/img_avatar.png" alt="Avatar" class="avatar">
+			</a>
+				
+			
+		</div>   
+		<div id="logoutDiv" class="col-lg-6 col" >
+			<a href="Index.html" data-placement="bottom" data-toggle="tooltip" title="تسجيل خروج"><i id="logout" class="fa fa-sign-out"></i></a>			
+		</div>
+		 <div class="col text-right"><span class=" w3-hide-large w3-xxlarge   w3-animate-right " onclick="w3_open()"><i class="fa fa-bars"></i></span></div>
+	 </div>
+  </header>
+	<div id="SeriesContainer" >
+		
+		<div class="container " id="Category">
+			<div class="row d-flex flex-row-reverse">
+				<div  id="manageSer" class="col-lg-6 col-md-12  col-sm-12 text-right">
+					<h4 class=" text-muted">كل المسلسلات</h4>
+				</div>
+				<div id="addCat" class="col-lg-6 col-md-12 col-sm-12">
+					<div class="row">
+						<button id="AddBtn" class="col-lg-4 col-md-2 col-sm-3  btn text-center" data-toggle="modal" data-target="#myModal">إضافة مسلسل</button>
+						<form class="col-lg-7 col-md-7 col-sm-9 " action="/action_page.php">
+							<div class="input-group mb-3 " >
+							  <button type="submit"><i class="fa fa-search float-left fa-1x" id="searchicon" ></i></button>
+							  <input type="text" placeholder="أبحث هنا ..." id="usr" name="username" class="float-right" onfocus="focusFunction()" onblur="blurFunction()">
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class="container" >
+				<div  id="page" class="row d-flex flex-row-reverse">
+					<div class="card card-series2 col-lg-4  col-md-6 col-sm-6 col-12 list-group">
+						<div class="container" style="background-image:url('./Img/parent.jpg');">
+							  <div class="overlay">
+								<div class="text">مسلسلات</div>
+							  </div>
+						</div>
+						<h3>الأب الروحي </h3>
+						<p class="title"> تدور أحداث المسلسل عن عائلة كبيرة يسيطر عليها الأب زين العطار (محمود حميدة)، الذي له عدد كبير من الأبناء، حيث يسرد المسلسل علاقة هذا الأب بأبنائه، وكذلك علاقته مع عصابات السلاح والمهربين.		</p>
+						<ul class="list-inline text-center mt-4">
+							<li class="list-inline-item">
+								<div data-placement="top" data-toggle="tooltip" title="تعديل">
+									<a href="#myModal2" data-toggle="modal" >
+										<i class="fa fa-edit"></i>
+									</a>
+								</div>
+							</li>
+							<li class="list-inline-item">
+								<a href="#" data-toggle="tooltip" data-placement="top" title="حذف">
+									<i id="deleteIcon" class="fa fa-trash"></i>
+								</a>
+							</li>
+							<li class="list-inline-item">
+								<a href="Episodes of serials.html" data-toggle="tooltip" data-placement="top" title="عرض">
+									<i class="fa fa-eye"></i>
+								</a>
+							</li>
+							<li class="list-inline-item">
+								<a href="#" data-toggle="tooltip" data-placement="top" title="تمكين">
+									<label class="switch">
+									  <input type="checkbox" onclick="myFunction(this)" checked>
+									  <span class="slider round"></span>
+									</label>
+								</a>
+							</li>
+						</ul>
+						<button class="button1" onclick="SwitchButtons(this);" class="sideviewtoggle myButton">إضافة إلي الأعلانات</button>
+						<button class="button2" onclick="SwitchButtons(this);" class="sideviewtoggle myButton" style='display:none;'>حذف من الأعلانات</button>
+					</div>
+					<div class="card card-series2 col-lg-4  col-md-6 col-sm-6 col-12 list-group">
+						<div class="container" style="background-image:url('./Img/hogan.jpg');">
+							  <div class="overlay">
+								<div class="text">مسلسلات</div>
+							  </div>
+						</div>
+						<h3>هوجان </h3>
+						<p class="title"> تدور الأحداث حول شاب مُلقب من أهل منطقته الشعبية بـ “هوجان”، نظرًا لكونه من ذوي القدرات الخارقة، حيث نراه يسحب سيارات بيده دون مساعدة أحد، كما يثني العملات المعدنية بأصابعه وفمه ويبرع في أكل الزجاج.</p>
+						<ul class="list-inline text-center mt-4">
+							<li class="list-inline-item">
+								<div data-placement="top" data-toggle="tooltip" title="تعديل">
+									<a href="#myModal2" data-toggle="modal" >
+										<i class="fa fa-edit"></i>
+									</a>
+								</div>
+							</li>
+							<li class="list-inline-item">
+								<a href="#" data-toggle="tooltip" data-placement="top" title="حذف">
+									<i id="deleteIcon" class="fa fa-trash"></i>
+								</a>
+							</li>
+							<li class="list-inline-item">
+								<a href="Episodes of serials.html" data-toggle="tooltip" data-placement="top" title="عرض">
+									<i class="fa fa-eye"></i>
+								</a>
+							</li>
+							<li class="list-inline-item">
+								<a href="#" data-toggle="tooltip" data-placement="top" title="تمكين">
+									<label class="switch">
+									  <input type="checkbox" onclick="myFunction(this)" checked>
+									  <span class="slider round"></span>
+									</label>
+								</a>
+							</li>
+						</ul>
+						<button class="button1" onclick="SwitchButtons(this);" class="sideviewtoggle myButton">إضافة إلي الأعلانات</button>
+						<button class="button2" onclick="SwitchButtons(this);" class="sideviewtoggle myButton" style='display:none;'>حذف من الأعلانات</button>
+					</div>
+								
+					<div class="card card-series2 col-lg-4  col-md-6 col-sm-6 col-12 list-group">
+						<div class="container" style="background-image:url('./Img/e5tfa.jpg');">
+							  <div class="overlay">
+								<div class="text">مسلسلات</div>
+							  </div>
+						</div>
+						<h3> إختفاء</h3>
+						<p class="title">تعتمد أحداث المسلسل على الإثارة والغموض، حيث تظهر بطلة العمل نيللى كريم فى دور دكتورة جامعية تدرس فى روسيا وتعلم باختفاء زوجها، فتبدأ رحلة البحث عنه.</p>
+						<ul class="list-inline text-center mt-4">
+							<li class="list-inline-item">
+								<div data-placement="top" data-toggle="tooltip" title="تعديل">
+									<a href="#myModal2" data-toggle="modal" >
+										<i class="fa fa-edit"></i>
+									</a>
+								</div>
+							</li>
+							<li class="list-inline-item">
+								<a href="#" data-toggle="tooltip" data-placement="top" title="حذف">
+									<i id="deleteIcon" class="fa fa-trash"></i>
+								</a>
+							</li>
+							<li class="list-inline-item">
+								<a href="Episodes of serials.html" data-toggle="tooltip" data-placement="top" title="عرض">
+									<i class="fa fa-eye"></i>
+								</a>
+							</li>
+							<li class="list-inline-item">
+								<a href="#" data-toggle="tooltip" data-placement="top" title="تمكين">
+									<label class="switch">
+									  <input type="checkbox" onclick="myFunction(this)" checked>
+									  <span class="slider round"></span>
+									</label>
+								</a>
+							</li>
+						</ul>
+						<button class="button1" onclick="SwitchButtons(this);" class="sideviewtoggle myButton">إضافة إلي الأعلانات</button>
+						<button class="button2" onclick="SwitchButtons(this);" class="sideviewtoggle myButton" style='display:none;'>حذف من الأعلانات</button>
+					</div>
+								
+					<div class="card card-series2 col-lg-4  col-md-6 col-sm-6 col-12 list-group">
+						<div class="container" style="background-image:url('./Img/ma2mon.jpg');">
+							  <div class="overlay">
+								<div class="text">مسلسلات</div>
+							  </div>
+						</div>
+						<h3>مأمون وشركائوه</h3>
+						<p class="title">تدور أحداث المسلسل في إطار كوميدي اجتماعي ساخر، حول (مأمون) الرجل البخيل للغاية، والذي لديه 4 أبناء يحرمهم من كل شيء هم وزوجته .		</p>
+						<ul class="list-inline text-center mt-4">
+							<li class="list-inline-item">
+								<div data-placement="top" data-toggle="tooltip" title="تعديل">
+									<a href="#myModal2" data-toggle="modal" >
+										<i class="fa fa-edit"></i>
+									</a>
+								</div>
+							</li>
+							<li class="list-inline-item">
+								<a href="#" data-toggle="tooltip" data-placement="top" title="حذف">
+									<i id="deleteIcon" class="fa fa-trash"></i>
+								</a>
+							</li>
+							<li class="list-inline-item">
+								<a href="Episodes of serials.html" data-toggle="tooltip" data-placement="top" title="عرض">
+									<i class="fa fa-eye"></i>
+								</a>
+							</li>
+							<li class="list-inline-item">
+								<a href="#" data-toggle="tooltip" data-placement="top" title="تمكين">
+									<label class="switch">
+									  <input type="checkbox" onclick="myFunction(this)" checked>
+									  <span class="slider round"></span>
+									</label>
+								</a>
+							</li>
+						</ul>
+						<button class="button1" onclick="SwitchButtons(this);" class="sideviewtoggle myButton">إضافة إلي الأعلانات</button>
+						<button class="button2" onclick="SwitchButtons(this);" class="sideviewtoggle myButton" style='display:none;'>حذف من الأعلانات</button>
+					</div>
+								
+					<div class="card card-series2 col-lg-4  col-md-6 col-sm-6 col-12 list-group">
+						<div class="container" style="background-image:url('./Img/sab3Gar.jpg');">
+							  <div class="overlay">
+								<div class="text">مسلسلات</div>
+							  </div>
+						</div>
+						<h3>سابع جار </h3>
+						<p class="title"> يدور المسلسل حول أحد عمارات مصر الجديدة، التى يسكنها مجموعة من الجيران ويرصد المسلسل مشاكل كل بيت والصراعات التى تحدث داخله .</p>
+						<ul class="list-inline text-center mt-4">
+							<li class="list-inline-item">
+								<div data-placement="top" data-toggle="tooltip" title="تعديل">
+									<a href="#myModal2" data-toggle="modal" >
+										<i class="fa fa-edit"></i>
+									</a>
+								</div>
+							</li>
+							<li class="list-inline-item">
+								<a href="#" data-toggle="tooltip" data-placement="top" title="حذف">
+									<i id="deleteIcon" class="fa fa-trash"></i>
+								</a>
+							</li>
+							<li class="list-inline-item">
+								<a href="Episodes of serials.html" data-toggle="tooltip" data-placement="top" title="عرض">
+									<i class="fa fa-eye"></i>
+								</a>
+							</li>
+							<li class="list-inline-item">
+								<a href="#" data-toggle="tooltip" data-placement="top" title="تمكين">
+									<label class="switch">
+									  <input type="checkbox" onclick="myFunction(this)" checked>
+									  <span class="slider round"></span>
+									</label>
+								</a>
+							</li>
+						</ul>
+						<button class="button1" onclick="SwitchButtons(this);" class="sideviewtoggle myButton">إضافة إلي الأعلانات</button>
+						<button class="button2" onclick="SwitchButtons(this);" class="sideviewtoggle myButton" style='display:none;'>حذف من الأعلانات</button>
+					</div>
+								
+								
+				</div>
+				<!--------- indexes of pagination ----------->
+				<nav aria-label=...>
+					<ul id="pagList"class=pagination>
+						<li id="previous-page"><a href="javascript:void(0)" aria-label=Previous><span aria-hidden=true>&laquo;</span></a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+<!--- Snackbar------>
+	<div>
+		<div id="snackbar1"> تم التمكين بنجاح</div>
+		<div id="snackbar2"> تم إلغاء التمكين بنجاح</div>
+		<div id="snackbar3"> تمت الإضافة بنجاح</div>
+		<div id="snackbar4"> تم الحذف بنجاح</div>
+	</div>  
+<!------Add Modal --------->
+	 <div class="modal fade" id="myModal">
+		<form action="#" method="Post">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+
+			  <!-- Modal Header -->
+			  <div class="modal-header purple-gradient" >
+			   <button type="button" class="close " data-dismiss="modal" >&times;</button>
+				<h4 class="modal-title">إضافة مسلسل</h4>
+
+			  </div>
+
+			  <!-- Modal body -->
+			  <div class="modal-body text-right">
+				<input type="text" class="form-control mt-2 mb-2 text-right" id="usr" placeholder=" ...   الأسم">
+				<textarea class="form-control mt-2 text-right" rows="3" id="des" placeholder=" ...  الوصف"></textarea>
+				<div class="custom-select " >
+				  <select>
+					<option value="0">القسم</option>
+					<option value="1">رومانسي</option>
+					<option value="2">كوميدي</option>
+					<option value="3">تراجيدي</option>
+					<option value="4">أكشن</option>
+					
+				  </select>
+				</div>
+				<div class="input-container mt-5 ml-auto mr-auto">
+					<label class="btn btn-primary  attachFile">
+						<i class="fas fa-cloud-upload-alt text-white" aria-hidden="true"></i> 
+						<input  name='media' type="file" id="real-input" style="display: none;" accept="image/*">
+					</label>
+				<span class="file-info ">أختر صورة</span>
+				</div>
+			  </div>
+
+			  <!-- Modal footer -->
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-danger mr-auto ml-auto " data-dismiss="modal">حفظ</button>
+
+			  </div>
+
+			</div>
+		  </div>
+		</form> 
+	</div>
+<!--------Edit Model--------------->
+	 <div class="modal fade" id="myModal2">
+		<form action="#" method="Post">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+
+			  <!-- Modal Header -->
+			  <div class="modal-header purple-gradient" >
+			   <button type="button" class="close " data-dismiss="modal" >&times;</button>
+				<h4 class="modal-title">تعديل المسلسل</h4>
+
+			  </div>
+
+			  <!-- Modal body -->
+			  <div class="modal-body text-right">
+				<input type="text" class="form-control mt-2 mb-2 text-right" id="usr" placeholder=" ...   الأسم">
+				<textarea class="form-control mt-2 text-right" rows="3" id="des" placeholder=" ...  الوصف"></textarea>
+				<div class="custom-select " >
+				  <select>
+					<option value="0">القسم</option>
+					<option value="1">رومانسي</option>
+					<option value="2">كوميدي</option>
+					<option value="3">تراجيدي</option>
+					<option value="4">أكشن</option>
+					
+				  </select>
+				</div>
+				<div class="input-container2 mt-5 ml-auto mr-auto">
+					<label class="btn   attachFile2">
+						<i class="fas fa-cloud-upload-alt text-white" aria-hidden="true"></i> 
+						<input  name='media' type="file" id="real-input2" style="display: none;" accept="image/*">
+					</label>
+				<span class="file-info2">أختر صورة</span>
+				</div>
+			  </div>
+
+			  <!-- Modal footer -->
+			  <div class="modal-footer">
+				<button type="submit" class="btn btn-danger mr-auto ml-auto " data-dismiss="modal">حفظ</button>
+
+			  </div>
+
+			</div>
+		  </div>
+		</form> 
+	</div>	
+
+<script>
+
+/*----------- snackbar------*/
+function myFunction(obj) {
+	if(obj.checked==true)
+	{
+	  var x = document.getElementById("snackbar1");
+	  x.className = "show";
+	  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+	}
+	else
+	{
+	  var x = document.getElementById("snackbar2");
+	  x.className = "show";
+	  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    }
+}
+/*------------search------*/
+function focusFunction() {
+  document.getElementsByClassName("input-group")[0].style.border = "1px solid #ff1865";
+  
+  
+}
+function blurFunction() {
+  document.getElementsByClassName("input-group")[0].style.border = "1px solid #bcbcbc";
+  
+}
+/*---------- tooltip ---------*/
+$(document).ready(function(){
+
+  $('[data-toggle="tooltip"]').tooltip({ trigger: "hover" });   
+});
+/*$("#ll").checked(function(){});
+ $(document).ready(function(){
+       $(".myCheckBox").checked(function(){
+            
+            $("#yt").attr('title', 'enable');
+        });     
+    });
+	---or----
+	$(document).ready(function()
+{
+	if(document.getElementById("checkBoxTooltip").checked==false)
+	{
+		document.getElementById("yt").attr('title','marina');
+	}
+});
+	*/
+/*Close&Open navbar*/   
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+
+
+/*------------------  SwitchButtons --------------------------*/
+function SwitchButtons(buttonId) {
+  var hideBtn, showBtn, menuToggle;
+  if (buttonId.className=="button1") {
+    menuToggle = 'menu2';
+    showBtn = buttonId.nextElementSibling;
+    hideBtn = buttonId;
+	var x = document.getElementById("snackbar3");
+	x.className = "show";
+	setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+
+  } else if (buttonId.className=="button2") {
+    menuToggle = 'menu3';
+    showBtn = buttonId.previousElementSibling;
+    hideBtn = buttonId;
+	var x = document.getElementById("snackbar4");
+	  x.className = "show";
+	  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+
+  }
+  //I don't have your menus, so this is commented out.  just uncomment for your usage
+  // document.getElementById(menuToggle).toggle(); //step 1: toggle menu
+  hideBtn.style.display = 'none'; //step 2 :additional feature hide button
+  showBtn.style.display = ''; //step 3:additional feature show button
+}
+/*----------------------------------------------------------------------pagination--------------------------------------------------------*/
+'use strict';
+var numberOfItems = $('#page .list-group').length; // Get total number of the items that should be paginated
+var limitPerPage = 3; // Limit of items per each page
+$('#page .list-group:gt(' + (limitPerPage - 1) + ')').hide(); // Hide all items over page limits (e.g., 5th item, 6th item, etc.)
+var totalPages = Math.round(numberOfItems / limitPerPage); // Get number of pages
+$(".pagination").append("<li class='current-page active'><a href='javascript:void(0)'>" + 1 + "</a></li>"); // Add first page marker
+
+// Loop to insert page number for each sets of items equal to page limit (e.g., limit of 4 with 20 total items = insert 5 pages)
+for (var i = 2; i <= totalPages; i++) {
+  $(".pagination").append("<li class='current-page'><a href='javascript:void(0)'>" + i + "</a></li>"); // Insert page number into pagination tabs
+}
+// Add next button after all the page numbers  
+$(".pagination").append("<li id='next-page'><a href='javascript:void(0)' aria-label=Next><span aria-hidden=true>&raquo;</span></a></li>");
+// Function that displays new items based on page number that was clicked
+$(".pagination li.current-page").on("click", function() {
+  // Check if page number that was clicked on is the current page that is being displayed
+  if ($(this).hasClass('active')) {
+    return false; // Return false (i.e., nothing to do, since user clicked on the page number that is already being displayed)
+  } else {
+    var currentPage = $(this).index(); // Get the current page number
+    $(".pagination li").removeClass('active'); // Remove the 'active' class status from the page that is currently being displayed
+    $(this).addClass('active'); // Add the 'active' class status to the page that was clicked on
+    $("#page .list-group").hide(); // Hide all items in loop, this case, all the list groups
+    var grandTotal = limitPerPage * currentPage; // Get the total number of items up to the page number that was clicked on
+
+    // Loop through total items, selecting a new set of items based on page number
+    for (var i = grandTotal - limitPerPage; i < grandTotal; i++) {
+      $("#page .list-group:eq(" + i + ")").show(); // Show items from the new page that was selected
+    }
+  }
+
+});
+
+// Function to navigate to the next page when users click on the next-page id (next page button)
+$("#next-page").on("click", function() {
+  var currentPage = $(".pagination li.active").index(); // Identify the current active page
+  // Check to make sure that navigating to the next page will not exceed the total number of pages
+  if (currentPage === totalPages) {
+    return false; // Return false (i.e., cannot navigate any further, since it would exceed the maximum number of pages)
+  } else {
+    currentPage++; // Increment the page by one
+    $(".pagination li").removeClass('active'); // Remove the 'active' class status from the current page
+    $("#page .list-group").hide(); // Hide all items in the pagination loop
+    var grandTotal = limitPerPage * currentPage; // Get the total number of items up to the page that was selected
+
+    // Loop through total items, selecting a new set of items based on page number
+    for (var i = grandTotal - limitPerPage; i < grandTotal; i++) {
+      $("#page .list-group:eq(" + i + ")").show(); // Show items from the new page that was selected
+    }
+
+    $(".pagination li.current-page:eq(" + (currentPage - 1) + ")").addClass('active'); // Make new page number the 'active' page
+  }
+});
+
+// Function to navigate to the previous page when users click on the previous-page id (previous page button)
+$("#previous-page").on("click", function() {
+  var currentPage = $(".pagination li.active").index(); // Identify the current active page
+  // Check to make sure that users is not on page 1 and attempting to navigating to a previous page
+  if (currentPage === 1) {
+    return false; // Return false (i.e., cannot navigate to a previous page because the current page is page 1)
+  } else {
+    currentPage--; // Decrement page by one
+    $(".pagination li").removeClass('active'); // Remove the 'activate' status class from the previous active page number
+    $("#page .list-group").hide(); // Hide all items in the pagination loop
+    var grandTotal = limitPerPage * currentPage; // Get the total number of items up to the page that was selected
+
+    // Loop through total items, selecting a new set of items based on page number
+    for (var i = grandTotal - limitPerPage; i < grandTotal; i++) {
+      $("#page .list-group:eq(" + i + ")").show(); // Show items from the new page that was selected
+    }
+
+    $(".pagination li.current-page:eq(" + (currentPage - 1) + ")").addClass('active'); // Make new page number the 'active' page
+  }
+});
+/*------------------ file input (modal)--------------------------*/
+$('.attachFile').on('change', ':file', function() {
+   var input = $(this),
+   numFiles = input.get(0).files ? input.get(0).files.length : 1,
+   label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+   input.trigger('fileselect', [numFiles, label]);
+});
+$('.attachFile2').on('change', ':file', function() {
+   var input = $(this),
+   numFiles = input.get(0).files ? input.get(0).files.length : 1,
+   label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+   input.trigger('fileselect', [numFiles, label]);
+});
+const fileInfo = document.querySelector('.file-info');
+const fileInfo2 = document.querySelector('.file-info2');
+const realInput = document.getElementById('real-input');
+const realInput2 = document.getElementById('real-input2');
+realInput.addEventListener('change', () => {
+  const name = realInput.value.split(/\\|\//).pop();
+  
+  const truncated = name.length > 20 
+    ? name.substr(name.length - 20) 
+    : name;
+  
+  fileInfo.innerHTML = truncated;
+  
+});  
+realInput2.addEventListener('change', () => {
+  const name2 = realInput2.value.split(/\\|\//).pop();
+  
+  const truncated2 = name2.length > 20 
+    ? name2.substr(name2.length - 20) 
+    : name2;
+  
+  fileInfo2.innerHTML = truncated2;
+  
+});
+/*---------------------------------------------------select box ---------------------------------*/     
+var x, i, j, selElmnt, a, b, c;
+/*look for any elements with the class "custom-select":*/
+x = document.getElementsByClassName("custom-select");
+for (i = 0; i < x.length; i++) {
+  selElmnt = x[i].getElementsByTagName("select")[0];
+  /*for each element, create a new DIV that will act as the selected item:*/
+  a = document.createElement("DIV");
+  a.setAttribute("class", "select-selected");
+  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+  x[i].appendChild(a);
+  /*for each element, create a new DIV that will contain the option list:*/
+  b = document.createElement("DIV");
+  b.setAttribute("class", "select-items select-hide");
+  for (j = 1; j < selElmnt.length; j++) {
+    /*for each option in the original select element,
+    create a new DIV that will act as an option item:*/
+    c = document.createElement("DIV");
+    c.innerHTML = selElmnt.options[j].innerHTML;
+    c.addEventListener("click", function(e) {
+        /*when an item is clicked, update the original select box,
+        and the selected item:*/
+        var y, i, k, s, h;
+        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        h = this.parentNode.previousSibling;
+        for (i = 0; i < s.length; i++) {
+          if (s.options[i].innerHTML == this.innerHTML) {
+            s.selectedIndex = i;
+            h.innerHTML = this.innerHTML;
+            y = this.parentNode.getElementsByClassName("same-as-selected");
+            for (k = 0; k < y.length; k++) {
+              y[k].removeAttribute("class");
+            }
+            this.setAttribute("class", "same-as-selected");
+            break;
+          }
+        }
+        h.click();
+    });
+    b.appendChild(c);
+  }
+  x[i].appendChild(b);
+  a.addEventListener("click", function(e) {
+      /*when the select box is clicked, close any other select boxes,
+      and open/close the current select box:*/
+      e.stopPropagation();
+      closeAllSelect(this);
+      this.nextSibling.classList.toggle("select-hide");
+      this.classList.toggle("select-arrow-active");
+    });
+}
+function closeAllSelect(elmnt) {
+  /*a function that will close all select boxes in the document,
+  except the current select box:*/
+  var x, y, i, arrNo = [];
+  x = document.getElementsByClassName("select-items");
+  y = document.getElementsByClassName("select-selected");
+  for (i = 0; i < y.length; i++) {
+    if (elmnt == y[i]) {
+      arrNo.push(i)
+    } else {
+      y[i].classList.remove("select-arrow-active");
+    }
+  }
+  for (i = 0; i < x.length; i++) {
+    if (arrNo.indexOf(i)) {
+      x[i].classList.add("select-hide");
+    }
+  }
+}
+/*if the user clicks anywhere outside the select box,
+then close all select boxes:*/
+document.addEventListener("click", closeAllSelect);
+
+
+</script>
+</body>
+</html>

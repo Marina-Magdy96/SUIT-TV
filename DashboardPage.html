@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<title>SUIT-TV</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="./Img/icon.jpg" type="image/jpg" sizes="16x16">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<link rel="stylesheet" href="./CSS/Main.css">
+<link href="https://fonts.googleapis.com/css?family=El+Messiri|Sarpanch|Baloo+Da|Text+Me+One|Luckiest+Guy|Russo+One|Paytone+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-black w3-animate-right" style="z-index:3;width:200px;" id="mySidebar">
+  <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding close" title="close menu">
+      <i class="fa fa-remove"></i>
+  </a>
+  <div class="w3-container">
+    <h1 class="glow ">SUIT-TV</h1>
+  </div>
+  <div class="w3-bar-block">
+    <a href="DashboardPage.html" onclick="w3_close()" class="w3-bar-item  w3-padding navactive">لوحة القيادة<i class=" fa  fa-home fa-fw w3-margin-right "></i></a> 
+    <a href="CategoriesPage.html" onclick="w3_close()" class="w3-bar-item  w3-padding">الأقسام<i class=" fa fa-sitemap fa-fw w3-margin-right w3-large"></i></a>
+	<a href="Series.html" onclick="w3_close()" class="w3-bar-item  w3-padding  ">المسلسلات<i class=" fa  fa-television fa-fw w3-margin-right w3-large"></i></a> 
+    <a href="Episodes of serials.html" onclick="w3_close()" class="w3-bar-item  w3-padding">حلقات المسلسلات<i class="fa fa-camera-retro fa-fw w3-margin-right w3-large"></i></a> 
+    <a href="Film.html" onclick="w3_close()" class="w3-bar-item  w3-padding">أفلام<i class="fa fa-film fa-fw w3-margin-right w3-large"></i></a> 
+    <a href="Slide.html" onclick="w3_close()" class="w3-bar-item  w3-padding">السليد الوجه<i class="fa fa-circle-o fa-fw w3-margin-right w3-large"></i></a> 
+    <a href="Users.html" onclick="w3_close()" class="w3-bar-item  w3-padding">مستخدمين<i class="fa fa-user fa-fw w3-margin-right w3-large"></i></a>
+ 
+  </div>
+  
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+
+
+  <!-- Header -->
+  <header id="portfolio">
+	 <div id="UserNav" class="row">
+		<div class=" col-lg-6 col">
+			<a href="Profile.html" data-placement="bottom" data-toggle="tooltip" title="الصفحة الشخصية">
+				<img src="./Img/img_avatar.png" alt="Avatar" class="avatar">
+			</a>
+				
+			
+		</div>   
+		<div id="logoutDiv" class="col-lg-6 col" >
+			<a href="Index.html" data-placement="bottom" data-toggle="tooltip" title="تسجيل خروج"><i id="logout" class="fa fa-sign-out"></i></a>			
+		</div>
+		 <div class="col text-right"><span class=" w3-hide-large w3-xxlarge   w3-animate-right " onclick="w3_open()"><i class="fa fa-bars"></i></span></div>
+	 </div>
+  </header>
+ <div id="DashboardContainer" >
+    <div class="container " id="Dashboard">
+		<div class="row d-flex flex-row-reverse">
+			<div class="col-lg-4  col-md-6 col-sm-6  col-12 " id="FirstDiv" onclick="location.href='Film.html'">
+				<i id="FirstDivI" class="icon fa fa-film "></i>
+				<p id="FirstDivP">فيلم</p>
+				<h1 id="FirstDivH">55</h1>
+			</div>
+			<div class="col-lg-4 col-md-6  col-sm-6 col-12" id="SecondDiv" onclick="location.href='Series.html'">
+				<i id="SecondDivI"class="icon fa fa-television "></i>
+				<p id="SecondDivP">مسلسل</p>
+				<h1 id="SecondDivH">55</h1>
+			</div>
+			<div class="col-lg-4 col-md-6 col-sm-6 col-12" id="ThirdDiv" onclick="location.href='Users.html'">
+				<i  id="ThirdDivI"class="icon fa fa-user "></i>
+				<p  id="ThirdDivP">مستخدم</p>
+				<h1  id="ThirdDivH">55</h1>
+			</div>
+		</div>
+	</div>
+	<div id="Footer" class="page-footer font-small stylish-color-dark  ">
+		<div class="footer-copyright text-center py-2">Copyright © 2019 :
+			<a href="https://mdbootstrap.com/education/bootstrap/" id="FooterLink"> SUIT-TV.com</a>
+			<span>All Rights Reserved</span>
+		</div>
+	</div>
+    <div id="mySidenav" class=" sidenav" >
+		<a href="#" id="website">WEBSITE<i class="fas fa-hand-point-left"></i></a>
+		<a href="#" id="about">ABOUT<i class="fas fa-hand-point-left"></i></a>
+    </div>
+</div>
+	
+  
+  
+
+
+<script>
+/*--------active pages------*/
+// Get the container element
+var btnContainer = document.getElementsByClassName("w3-bar-block")[0];
+
+// Get all buttons with class="btn" inside the container
+var btns = btnContainer.getElementsByClassName("w3-bar-item");
+
+// Loop through the buttons and add the active class to the current/clicked button
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("navactive");
+    current[0].className = current[0].className.replace(" navactive", "");
+    this.className += " navactive";
+  });
+}
+/*Close&Open navbar*/
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+/*---------- tooltip ---------*/
+$(document).ready(function(){
+
+  $('[data-toggle="tooltip"]').tooltip({ trigger: "hover" });   
+});
+
+/*onOver Div*/
+$('#FirstDiv').hover(function(){
+		$('#FirstDivP').css("color","#fd9c17"),
+		$('#FirstDivH').css("color","#fd9c17"),
+		$('#FirstDiv').css("background-color",'white')
+		,$('#FirstDivI').css("background-color","#fd9c17"),
+		$('#FirstDivI').css("color","white")});
+$('#FirstDiv').mouseleave(function(){
+		$('#FirstDivP').css("color","white"),
+		$('#FirstDivH').css("color","white"),
+		$('#FirstDiv').css("background-color","#fd9c17"),
+		$('#FirstDivI').css("background-color","white"),
+		$('#FirstDivI').css("color","#fd9c17")});
+
+$('#SecondDiv').hover(function(){
+		$('#SecondDivP').css("color","#ea4642"),
+		$('#SecondDivH').css("color","#ea4642"),
+		$('#SecondDiv').css("background-color","white"),
+		$('#SecondDivI').css("background-color","#ea4642"),
+		$('#SecondDivI').css("color","white")});
+$('#SecondDiv').mouseleave(function(){
+		$('#SecondDivP').css("color","white"),
+		$('#SecondDivH').css("color","white"),
+		$('#SecondDiv').css("background-color","#ea4642"),
+		$('#SecondDivI').css("background-color","white"),
+		$('#SecondDivI').css("color","#ea4642")});
+
+$('#ThirdDiv').hover(function(){
+		$('#ThirdDivP').css("color","#e91e63"),
+		$('#ThirdDivH').css("color","#e91e63"),
+		$('#ThirdDiv').css("background-color","white"),
+		$('#ThirdDivI').css("background-color","#e91e63"),
+		$('#ThirdDivI').css("color","white")});
+$('#ThirdDiv').mouseleave(function(){
+		$('#ThirdDivP').css("color","white"),
+		$('#ThirdDivH').css("color","white"),
+		$('#ThirdDiv').css("background-color","#e91e63"),
+		$('#ThirdDivI').css("background-color","white"),
+		$('#ThirdDivI').css("color","#e91e63")});
+			
+
+
+
+
+</script>
+</body>
+</html>
